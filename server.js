@@ -10,11 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// MongoDB Connection using Mongoose
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    // Removed useUnifiedTopology as it's no longer necessary
-})
+// MongoDB Connection using Mongoose (Updated)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB Connected");
     })
